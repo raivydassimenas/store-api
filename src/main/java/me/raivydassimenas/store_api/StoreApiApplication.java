@@ -1,13 +1,13 @@
-package me.raivydassimenas.store_backend;
+package me.raivydassimenas.store_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StoreBackendApplication {
+public class StoreApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StoreBackendApplication.class, args);
+		SpringApplication.run(StoreApiApplication.class, args);
 	}
 
 }
