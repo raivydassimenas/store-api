@@ -9,27 +9,32 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "products")
+public class Product {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false, unique = true)
-  private String username;
-
-  @Column(nullable = false, unique = true)
-  private String email;
+  @Column(nullable = false)
+  private String title;
 
   @Column(nullable = false)
-  private String password;
+  private String description;
+
+  @Column(nullable = false)
+  private Double price;
+
+  @Column(nullable = false)
+  private Integer category;
+
+  @Column(nullable = false)
+  private String imageUrl;
 
   @Column(nullable = false)
   private LocalDateTime createdAt;

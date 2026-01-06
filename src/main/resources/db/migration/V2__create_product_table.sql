@@ -1,8 +1,9 @@
-CREATE TABLE users (
+CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(50) NOT NULL UNIQUE,
-  email VARCHAR(100) NOT NULL UNIQUE,
-  password_hash VARCHAR(255) NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  description TEXT NOT NULL,
+  image_url VARCHAR(255) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -16,6 +17,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER update_timestamp_trigger
-BEFORE UPDATE ON users
+BEFORE UPDATE ON products
 FOR EACH ROW
 EXECUTE FUNCTION update_timestamp();
